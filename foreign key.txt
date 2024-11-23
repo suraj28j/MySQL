@@ -1,0 +1,54 @@
+create table city(
+cid int not null auto_increment,
+cityname varchar(40),
+primary key (cid)
+);
+
+insert city(cityname)
+values("Lucknow"),
+("Kanpur"),
+("Prayagraj"),
+("Varanasi"),
+("Agra");
+
+
+
+create table stdcity(
+id int not null,
+name varchar(30) not null,
+persentage int not null,
+age int not null,
+gender varchar(1)not null,
+city_name int not null,
+primary key (id),
+foreign key (city_name) references city (cid)
+);
+
+insert into stdcity(id, name, persentage, age, gender, city_name)
+values
+(1, "Himashu", 59, 22, "M", 2),
+(2, "Amit", 61, 21, "M", 4),
+(3, "Kavita", 66, 22, "F", 3),
+(4, "Govind", 60, 21, "M", 1),
+(5, "Pankaj", 62, 20, "M", 5),
+(6, "Hina", 63, 21, "F", 1),
+(7, "Ramesh", 59, 23, "M", 4),
+(8, "Priti", 60, 22, "F", 5),
+(9, "Dhirendra", 63, 21, "M", 3),
+(10, "Sumit", 61, 23, "M", 2);
+
+
+insert into clgstd(id, name, age, city)
+values
+(1, "Himashu", 22, 2),
+(2, "Amit", 21, 4),
+(3, "Kavita", 22, 3),
+(4, "Govind", 21, 1),
+(5, "Pankaj", 20, 5),
+(6, "Hina", 21, 1),
+(7, "Ramesh", 23, 4),
+(8, "Priti", 22, 5),
+(9, "Dhirendra", 21, 3),
+(10, "Sumit", 23, 2);
+
+ 
